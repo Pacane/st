@@ -1,7 +1,7 @@
-diff --git a/config.def.h b/config.def.h
+diff --git a/config.h b/config.h
 index 546edda..df14610 100644
---- a/config.def.h
-+++ b/config.def.h
+--- a/config.h
++++ b/config.h
 @@ -457,3 +457,9 @@ static char ascii_printable[] =
  	" !\"#$%&'()*+,-./0123456789:;<=>?"
  	"@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"
