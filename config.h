@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMonoMedium Nerd Font:pixelsize=14:antialias=true:autohint=true";
+static char *font = "JetBrainsMonoMedium Nerd Font:pixelsize=13:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -170,8 +170,10 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
-	{ XK_ANY_MOD,            Button4, kscrollup,      {.i = 3} },
-	{ XK_ANY_MOD,            Button5, kscrolldown,    {.i = 3} },
+	{ ControlMask,          Button4, zoom,           {.f = +1} },
+	{ ControlMask,          Button5, zoom,           {.f = -1} },
+	{ XK_ANY_MOD,           Button4, kscrollup,      {.i = 3} },
+	{ XK_ANY_MOD,           Button5, kscrolldown,    {.i = 3} },
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
 	{ XK_ANY_MOD,           Button5, ttysend,        {.s = "\005"} },
@@ -184,9 +186,6 @@ static MouseShortcut mshortcuts[] = {
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
-	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
-	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
-	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
 	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
 	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
